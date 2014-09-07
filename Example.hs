@@ -12,6 +12,7 @@ universe1, universe2 :: RE
 universe1 = Star (Plus _0 _1)
 universe2 = Star (Plus _1 _0)
 
-r, s :: RE
+r, s, t :: RE
 r = Plus universe1 universe2
 s = Plus Empty (Epsilon `Dot` universe1)
+t = Star universe1
