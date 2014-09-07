@@ -1,5 +1,5 @@
--- Taken from:
--- http://www1.eafit.edu.co/asicard/courses/automata-CB0081/src/RegExp.html
+--  Taken from:
+--  http://www1.eafit.edu.co/asicard/courses/automata-CB0081/src/RegExp.html
 
 module RegEx where
 
