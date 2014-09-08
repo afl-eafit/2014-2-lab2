@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
 
 <html>
 <head>
@@ -24,14 +24,17 @@
   are similar. Two regular expressions are <i>similar</i> if one can be
   transformed to the other by using only the identities:</p>
 
-  <blockquote>
-    <i>R + R = R</i>,<br>
-    <i>P + Q = Q + P</i>,<br>
-    <i>P + (Q + R) = (P + Q) + R</i>,<br>
-    <i>ε.R = R.ε = R</i>,<br>
-    <i>∅.R = R.∅ = ∅</i>,<br>
-    <i>R + ∅ = R</i>.
-  </blockquote>
+  <p><i>R + R = R</i>,</p>
+
+  <p><i>P + Q = Q + P</i>,</p>
+
+  <p><i>P + (Q + R) = (P + Q) + R</i>,</p>
+
+  <p><i>ε.R = R.ε = R</i>,</p>
+
+  <p><i>∅.R = R.∅ = ∅</i>,</p>
+
+  <p><i>R + ∅ = R</i>.</p>
 
   <h2>Assignment (80%)</h2>
 
@@ -57,21 +60,18 @@
   <h2>Examples</h2>
 
   <p>Using the module Example:</p>
+  <pre>
+    GHCi&gt; areSimilar universe1 universe2<br>    True
 
-  <blockquote>
-    <code>GHCi&gt; areSimilar universe1 universe2</code><br>
-    <code>True</code>
-  </blockquote>
+</pre>
+  <pre>
+    GHCi&gt; areSimilar r s<br>    True
 
-  <blockquote>
-    <code>GHCi&gt; areSimilar r s</code><br>
-    <code>True</code>
-  </blockquote>
+</pre>
+  <pre>
+    GHCi&gt; areSimilar r t<br>    False
 
-  <blockquote>
-    <code>GHCi&gt; areSimilar r t</code><br>
-    <code>False</code>
-  </blockquote>
+</pre>
 
   <h2>Miscellany(10%)</h2>
 
