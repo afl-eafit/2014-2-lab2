@@ -1,118 +1,173 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-<meta name="generator" content=
-"HTML Tidy for Windows (vers 25 March 2009), see www.w3.org">
-<meta http-equiv="Content-Type" content=
-"text/html; charset=us-ascii">
-<title>Testing Similarity of Regular Expressions</title>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+
+  <title>Testing Similarity of Regular Expressions</title>
 </head>
+
 <body>
-<div style="text-align: center;">
-<h1>Programming lab 2: Regular expressions similarity</h1>
-<p><b>Submission deadline: Friday, September 25, 2014 (11:59 pm)</b></p>
-</div>
-<h2>Introduction</h2>
-<p>The aim of this programming assignment is to write a Haskell
-program that given two regular expressions <i>R</i> and <i>S</i> determines
-if they are similar. Two regular expressions are
-<i>similar</i> if one can be transformed to the other by using only
-the identities:<blockquote><i>R + R = R</i>,<br><i>P + Q = Q + P</i>,<br><i>P + (Q +
-R) = (P + Q) + R</i>,<br><i>&epsilon;.R = R.&epsilon; = R</i>,<br>
-<i>&empty;.R = R.&empty; = &empty;</i>,<br><i>R + &empty; =
-R</i>.</blockquote>
-<h2>Assignment (80%)</h2>
-<ul>
-<li>Download from the GitHub repository <a href=
-"https://github.com/afl-eafit/cb0081-2014-2-lab2">cb0081-2014-2-lab2</a>
-the modules RegEx.hs and Example.hs, where you will find an
-implementation and some examples of a polyphormic regular
-expression data type.</li>
-<li>(70%) Using the module RegEx, define a function
-<pre>
+  <div style="text-align: center;">
+    <h1>Programming lab 2: Regular expressions similarity</h1>
+
+    <p><b>Submission deadline: Friday, September 25, 2014 (11:59 pm)</b></p>
+  </div>
+
+  <h2>Introduction</h2>
+
+  <p>The aim of this programming assignment is to write a Haskell program
+  that given two regular expressions <i>R</i> and <i>S</i> determines if they
+  are similar. Two regular expressions are <i>similar</i> if one can be
+  transformed to the other by using only the identities:</p>
+
+  <blockquote>
+    <i>R + R = R</i>,<br>
+    <i>P + Q = Q + P</i>,<br>
+    <i>P + (Q + R) = (P + Q) + R</i>,<br>
+    <i>&epsilon;.R = R.&epsilon; = R</i>,<br>
+    <i>&empty;.R = R.&empty; = &empty;</i>,<br>
+    <i>R + &empty; = R</i>.
+  </blockquote>
+
+  <h2>Assignment (80%)</h2>
+
+  <ul>
+    <li>Download from the GitHub repository <a href=
+    "https://github.com/afl-eafit/cb0081-2014-2-lab2">cb0081-2014-2-lab2</a>
+    the modules RegEx.hs and Example.hs, where you will find an
+    implementation and some examples of a polyphormic regular expression data
+    type.</li>
+
+    <li>(70%) Using the module RegEx, define a function
+      <pre>
   areSimilar :: RegEx a -&gt; RegEx a -&gt; Bool
-</pre>
-where <code>areSimilar r s</code> determines if regular expressions
-<code>r</code> and <code>s</code> are similar.</li>
-<li>(10%) Annotate your source code in a way that explains your
-solution for the assignment. Improve it with <a href=
-"http://community.haskell.org/~ndm/hlint/">HLint</a>.</li>
-</ul>
-<h2>Examples</h2>
-<p>Using the module Example:</p>
-<blockquote><code>GHCi&gt; areSimilar universe1
-universe2</code><br>
-<code>True</code></blockquote>
-<blockquote><code>GHCi&gt; areSimilar r s</code><br>
-<code>True</code></blockquote>
-<blockquote><code>GHCi&gt; areSimilar r t</code><br>
-<code>False</code></blockquote>
-<h2>Miscellany(10%)</h2>
-<ul>
-<li>Before submitting your programming lab verify that your code:
-<ul>
-<li>Has type signatures for everything (even where clauses and let
-expressions).</li>
-<li>Has good (English) comments.</li>
-<li>Has no overly complicated function definitions.</li>
-<li>Does not contain any repetitive code.</li>
-<li>Has a consistent layout.</li>
-<li>Does not have long lines (at most 80 columns).</li>
-<li>Has no junk (unused code, commented code, unnecessary
-code).</li>
-<li>Does not have trailing whitespace (delete all unnecessary
-spaces at the end of a line, or empty lines at the end of a file).
-See <a href=
-"http://www1.eafit.edu.co/asicard/tips-and-tricks.html#fixing-trailing-whitespace-issues">
-fixing trailing whitespace issues with Emacs.</a></li>
-</ul>
-<br></li>
-<li>Your Haskell program will be tested with GHC 7.8.3 and the
-following GHC options:
-<ul>
-<li><code>-Wall</code></li>
-<li><code>-fwarn-tabs</code></li>
-<li><code>-Werror</code></li>
-</ul>
-</li>
-</ul>
-<h2>Submission (10%)</h2>
-<p>Submission is electronic. Send an email to
-asr(at)eafit(dot)edu(dot)co and dmonto39(at)eafit(dot)edu(dot)co
-and attach a compressed file with your solution. Your submission
-has to include the following:</p>
-<ul>
-<li><code>Similarity.hs</code>, a Haskell module file with your
-solution for the assigment.</li>
-<li>README, a file containing at least the following information.
-<ul>
-<li>The name of your program.</li>
-<li>Your name(s).</li>
-<li>A general description of your program.</li>
-<li>Information on how to use your program.</li>
-</ul>
-</li>
-</ul>
-<h2>Required GHC version</h2>
-<p>You are to use GHC 7.8.3. You can get it installing the <a href=
-"http://www.haskell.org/platform/">Haskell Platform 2014.2.0.0</a>
-(recommended) or you can install it from <a href=
-"http://www.haskell.org/ghc/">the Glasgow Haskell Compiler</a>.</p>
-<h2>Additional information</h2>
-<ul>
-<li>The programming lab may either be solved on your own, or
-jointly with one other student taking the course.</li>
-<li>You can add class constraints to the type signature of the
-<code>areSimilar</code> function if you need them.</li>
-</ul>
-<h2>Bibliography</h2>
-<p>Brzozowski, J.A.: Derivatives of regular expressions. JACM 11, 481-494 (1964).</p>
-<hr><p><a href=
-"http://www1.eafit.edu.co/asicard/courses/automata-CB0081/">Automata
-and formal languages - CB0081</a></p>
-<p><a href="http://validator.w3.org/check?uri=referer"><img src=
-"http://www.w3.org/Icons/valid-html401" alt=
-"Valid HTML 4.01 Strict" height="31" width="88"></a></p>
+</pre>where <code>areSimilar r s</code> determines if regular expressions
+<code>r</code> and <code>s</code> are similar.
+    </li>
+
+    <li>(10%) Annotate your source code in a way that explains your solution
+    for the assignment. Improve it with <a href=
+    "http://community.haskell.org/~ndm/hlint/">HLint</a>.</li>
+  </ul>
+
+  <h2>Examples</h2>
+
+  <p>Using the module Example:</p>
+
+  <blockquote>
+    <code>GHCi&gt; areSimilar universe1 universe2</code><br>
+    <code>True</code>
+  </blockquote>
+
+  <blockquote>
+    <code>GHCi&gt; areSimilar r s</code><br>
+    <code>True</code>
+  </blockquote>
+
+  <blockquote>
+    <code>GHCi&gt; areSimilar r t</code><br>
+    <code>False</code>
+  </blockquote>
+
+  <h2>Miscellany(10%)</h2>
+
+  <ul>
+    <li>Before submitting your programming lab verify that your code:
+
+      <ul>
+        <li>Has type signatures for everything (even where clauses and let
+        expressions).</li>
+
+        <li>Has good (English) comments.</li>
+
+        <li>Has no overly complicated function definitions.</li>
+
+        <li>Does not contain any repetitive code.</li>
+
+        <li>Has a consistent layout.</li>
+
+        <li>Does not have long lines (at most 80 columns).</li>
+
+        <li>Has no junk (unused code, commented code, unnecessary code).</li>
+
+        <li>Does not have trailing whitespace (delete all unnecessary spaces
+        at the end of a line, or empty lines at the end of a file). See
+        <a href=
+        "http://www1.eafit.edu.co/asicard/tips-and-tricks.html#fixing-trailing-whitespace-issues">
+        fixing trailing whitespace issues with Emacs.</a></li>
+      </ul><br>
+    </li>
+
+    <li>Your Haskell program will be tested with GHC 7.8.3 and the following
+    GHC options:
+
+      <ul>
+        <li><code>-Wall</code></li>
+
+        <li><code>-fwarn-tabs</code></li>
+
+        <li><code>-Werror</code></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Submission (10%)</h2>
+
+  <p>Submission is electronic. Send an email to asr(at)eafit(dot)edu(dot)co
+  and dmonto39(at)eafit(dot)edu(dot)co and attach a compressed file with your
+  solution. Your submission has to include the following:</p>
+
+  <ul>
+    <li><code>Similarity.hs</code>, a Haskell module file with your solution
+    for the assigment.</li>
+
+    <li>README, a file containing at least the following information.
+
+      <ul>
+        <li>The name of your program.</li>
+
+        <li>Your name(s).</li>
+
+        <li>A general description of your program.</li>
+
+        <li>Information on how to use your program.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Required GHC version</h2>
+
+  <p>You are to use GHC 7.8.3. You can get it installing the <a href=
+  "http://www.haskell.org/platform/">Haskell Platform 2014.2.0.0</a>
+  (recommended) or you can install it from <a href=
+  "http://www.haskell.org/ghc/">the Glasgow Haskell Compiler</a>.</p>
+
+  <h2>Additional information</h2>
+
+  <ul>
+    <li>The programming lab may either be solved on your own, or jointly with
+    one other student taking the course.</li>
+
+    <li>You can add class constraints to the type signature of the
+    <code>areSimilar</code> function if you need them.</li>
+  </ul>
+
+  <h2>Bibliography</h2>
+
+  <p>Brzozowski, J.A.: Derivatives of regular expressions. JACM 11, 481-494
+  (1964).</p>
+  <hr>
+
+  <p><a href=
+  "http://www1.eafit.edu.co/asicard/courses/automata-CB0081/">Automata and
+  formal languages - CB0081</a></p>
+
+  <p><a href="http://validator.w3.org/check?uri=referer"><img src=
+  "http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict"
+  height="31" width="88"></a></p>
 </body>
 </html>
