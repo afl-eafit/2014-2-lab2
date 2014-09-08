@@ -15,14 +15,14 @@ expressions</h1>
 <p><b>Submission deadline: Friday, September 25, 2014 (11:59 pm)</b></p>
 </div>
 <h2>Introduction</h2>
-<p>The aim of this programming assigment is to write a Haskell
-program that given two regular expressions <i>R, S</i> determines
+<p>The aim of this programming assignment is to write a Haskell
+program that given two regular expressions <i>R</i> and <i>S</i> determines
 if they are similar. Two regular expressions are
 <i>similar</i> if one can be transformed to the other by using only
-the identities: <i>R + R = R</i>, <i>P + Q = Q + P</i>, <i>P + (Q +
-R) = (P + Q) + R</i>, <i>&epsilon;.R = R.&epsilon; = R</i>,
-<i>&empty;.R = R.&empty; = &empty;</i>, and <i>R + &empty; =
-R</i>.</p>
+the identities:<blockquote><i>R + R = R</i>,<br><i>P + Q = Q + P</i>,<br><i>P + (Q +
+R) = (P + Q) + R</i>,<br><i>&epsilon;.R = R.&epsilon; = R</i>,<br>
+<i>&empty;.R = R.&empty; = &empty;</i>,<br><i>R + &empty; =
+R</i>.</blockquote></p>
 <h2>Assignment (80%)</h2>
 <ul>
 <li>Download from the GitHub repository <a href=
@@ -42,12 +42,12 @@ solution for the assignment. Improve it with <a href=
 </ul>
 <h2>Examples</h2>
 <p>Using the module Example:</p>
-<blockquote><code>ghci&gt; areSimilar universe1
+<blockquote><code>GHCi&gt; areSimilar universe1
 universe2</code><br>
 <code>True</code></blockquote>
-<blockquote><code>ghci&gt; areSimilar r s</code><br>
+<blockquote><code>GHCi&gt; areSimilar r s</code><br>
 <code>True</code></blockquote>
-<blockquote><code>ghci&gt; areSimilar r t</code><br>
+<blockquote><code>GHCi&gt; areSimilar r t</code><br>
 <code>False</code></blockquote>
 <h2>Miscellany(10%)</h2>
 <ul>
